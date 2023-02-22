@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink, useLocation } from 'react-router-dom';
 
 export default function MovieList({ movies }) {
@@ -19,3 +20,12 @@ export default function MovieList({ movies }) {
     </ul>
   );
 }
+
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string,
+    })
+  ),
+};

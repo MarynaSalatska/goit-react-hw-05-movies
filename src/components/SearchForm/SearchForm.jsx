@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useSearchParams } from 'react-router-dom';
 
 export default function SearchForm({ handleSubmit }) {
@@ -32,3 +33,7 @@ export default function SearchForm({ handleSubmit }) {
     </div>
   );
 }
+
+SearchForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
